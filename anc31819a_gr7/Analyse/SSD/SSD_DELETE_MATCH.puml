@@ -1,0 +1,16 @@
+@startuml
+skinparam shadowing false
+hide footbox
+Actor Manager as M
+participant System as S
+activate M
+activate S
+S->M:affiche liste des match
+S<-M:selectionne un match
+S<-M:clic sur le bouton delete
+S->M:demande confirmation
+S->M:clic ok confirmation
+S->S:supprime le match
+S->M:affiche la liste match
+
+@enduml

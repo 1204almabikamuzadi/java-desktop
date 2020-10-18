@@ -1,0 +1,19 @@
+@startuml 
+skinparam shadowing false 
+hide footbox
+Actor Manager as M 
+participant listMatchDialog as L
+participant confirmDialog as log 
+participant Controller as C
+participant Repository as R
+L->C:deleteMatch(Match[])
+create log
+C->log:new
+M->log
+log-->C:true
+ 
+loop forEach a:Match 
+C->R:delete(a:Match)
+end 
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml 
+skinparam shadowing false
+hide footbox  
+Actor Manager as M 
+participant View as V <<Match add>>
+participant Match
+participant Controller as C
+ 
+participant Repository as R
+ create V 
+ C->V:new 
+ M->V: selectPlayerFirstName(player1):String
+ M->V:selectPkayerFirstName(player):String 
+ M->V:selectScore():string
+ M->V:validate():ButtonAdd
+create Match 
+ V->Match:new
+ V->Match:validate(): error[]
+ Match-->V
+V->C:createMatch(Match)
+C->R:saveMatch(Match)
+destroy V 
+destroy Match
+
+@enduml

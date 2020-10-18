@@ -1,0 +1,21 @@
+@startuml
+class Joueur{
+-firstName:String
++getInsription
++playMatch
+}
+class Tournoi{
+    -tournoiName
+    -ListJoueurs
+    -MatchList:List<Match>
+    
+}
+class Match{
+    -joueur 1:joueur
+    -joueur 2:joueur
+    -Score:String
+}
+Tournoi"1*" *--r- "1*"Joueur:inscrit>
+Tournoi "1"*-r-"*"Match:organise
+Joueur "2"--o "0*"Match:Play
+@enduml

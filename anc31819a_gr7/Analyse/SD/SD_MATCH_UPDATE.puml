@@ -1,0 +1,23 @@
+@startuml 
+skinparam shadowing false 
+autonumber
+hide footbox 
+
+
+Actor Manager as M
+participant "update Match" as U <<View>>
+participant "List Dialog" as L <<View>>
+participant Controller as C
+participant Repository as R 
+L->C:update Match(Match)
+create U 
+C->U:new
+M->U:setPlayer(player1)
+M->U:setPlayer(Player2)
+M->U:setScore(Score)
+M->U:validate()
+U->C:updateMatch(Match)
+C->R:saveMatch(new parameters)
+R->R:updateMatch()
+
+@enduml

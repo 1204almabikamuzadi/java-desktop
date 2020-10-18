@@ -1,0 +1,40 @@
+
+@startuml
+skinparam shadowing False
+left to right direction
+: Manager:as M
+package Tournoi{
+   usecase  UC_TOURNOI_LIST
+   usecase UC_LIST_JOUEUR
+   usecase UC_ADD_TOURNOI
+   usecase UC_TOURNOI_DELETE
+   usecase UC_TOURNOI_UPDATE
+
+}
+package Match{
+ usecase UC_MATCH_ADD
+ usecase UC_MATCH_DELETE
+ usecase UC_MATCH_UPDATE
+ usecase UC_MATCH_LIST
+
+
+}
+M-->UC_ADD_TOURNOI
+UC_ADD_TOURNOI-->UC_TOURNOI_LIST:<<include>>
+M-->UC_TOURNOI_DELETE
+UC_TOURNOI_DELETE-->UC_TOURNOI_LIST:<<include>>
+M-->UC_TOURNOI_UPDATE
+UC_TOURNOI_UPDATE-->UC_TOURNOI_LIST:<<include>>
+UC_TOURNOI_LIST--> UC_LIST_JOUEUR
+
+
+M-->UC_MATCH_ADD
+M-->UC_MATCH_DELETE
+M-->UC_MATCH_UPDATE
+
+
+
+
+
+
+@enduml

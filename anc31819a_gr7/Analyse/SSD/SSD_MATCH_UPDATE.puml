@@ -1,0 +1,16 @@
+@startuml 
+skinparam Shadowing false
+hide footbox
+Actor Manager as M
+participant System  as S
+activate S
+activate M
+S->M:affiche la table  des match
+S<-M:selection un match
+M->S:select joueur1
+M->S:select Joueur2
+M->S:select score
+M->S:clic sur le bouton update
+S<-S:valide les données
+M<-S:affiche la table des match
+@enduml

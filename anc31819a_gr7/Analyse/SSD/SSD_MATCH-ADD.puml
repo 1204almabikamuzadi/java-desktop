@@ -1,0 +1,27 @@
+@startuml
+Actor Manager as M
+participant System as S
+hide footbox
+activate M
+activate S
+S->M:Affiche liste des joueurs
+M->S :selectionne Joueur1
+M->S: selectionne joueur2
+alt case joueur1!=joueur2
+
+S->S:valide les données
+else case joueur1==joueur2
+S-->M:affiche selectionne un autre joueur
+
+M->S: selectionne joueur2
+else case Match (exists match )
+S->M: affiche selectionne un autre joueur autre
+S<-M:selectionnne joueur2
+end
+M-->S:selectionne un score
+M-->S:clic sur le bouton Add
+S->S:valide les données
+S->M:affiche la Table des matchs
+
+
+@enduml

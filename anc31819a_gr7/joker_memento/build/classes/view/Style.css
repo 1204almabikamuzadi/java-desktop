@@ -1,0 +1,83 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02-avr.-2019, 14:43:23
+    Author     : alfred
+*/
+.button{
+    -fx-background-color:red; 
+}
+#add{
+    -fx-background-color: #189f30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#delete{
+
+    -fx-background-color: #183371;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#play{
+    -fx-background-color:#189f30;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+
+}
+#inscrits{
+    -fx-background-color: #8EA2C6;
+    -fx-focused-color: #8EA2C6;
+}
+#root{
+    -fx-background-color:#711833;
+
+}
+.label{
+    -fx-text-fill: white;
+
+}
+#cb1,#cb2,#cbs{
+    -fx-background-color: #8EA2C6;
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+#milieu{
+    -fx-background-color:#711833;
+}
+#gauche,#droite{
+    -fx-background-color:#8EA2C6;
+
+}
+#root3{
+    -fx-background-color:#711833;
+}
+#valider2,#annuler2,#left2,#right2{
+    -fx-background-color: #183371;
+    -fx-background-radius: 40;
+    -fx-background-insets: -5;
+    -fx-text-fill: white;
+}
+#valider3{
+    -fx-background-color: #189f30;
+    -fx-background-radius: 60;
+    -fx-background-insets: -3;
+    -fx-text-fill: white;
+}
+#annuler3{
+    -fx-background-color: #189f30;
+    -fx-background-radius: 60;
+    -fx-background-insets: -3;
+    -fx-text-fill: white;
+}
+#choixMulti,#choixMulti3{
+    -fx-background-color: #e98b9a;
+    -fx-text-fill: black;
+}
+

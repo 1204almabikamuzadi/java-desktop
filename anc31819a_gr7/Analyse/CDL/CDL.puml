@@ -1,0 +1,77 @@
+@startuml 
+left to right direction
+
+class ViewAdd{
+    +selectPlayer()
+     +selectPlayerFirstName(player1):String
+     +selectPkayerFirstName(player):String 
+     +selectScore():string
+     +validate():ButtonAdd
+     +createMatch(Match)
+
+
+}
+class ViewDelete{
++deleteMatch(Match[])
++confirmDialog()
++cancelDialog()
+}
+class ViewUpdate{
+setPlayer(player1)
++setPlayer(Player2)
++setScore(Score)
++validate()
+}
+class View{
+
+}
+class Controller{
+-Tournoi
++getPlayers(Tournoi)
++deleteMatch(Match[])
+}
+class Repository{
++savePlayer(Joueur)
++saveMatch(Match)
++saveTournoi()
++update Tournoi()
++updateMatch
+
+}
+package Model{
+
+
+class Player{
+-firsName(String)
++getFirstName()
++toString()
++equals()
+}
+class Match{
+    +joueur1(player)
+    +joueur2(player)
+    -Score(String)
+    +public Match(constructor)
+    +getJoueur()
+    +Boolean matchexist(Match match)
+}
+class Tournoi{
+    -tourname(String)
+    -List<Joueur>inscrits
+    -List<Match>match
+    +addplayer(Tournoi)
+    +addmatch(players,Score)
+    +getMatch
+
+}
+}
+ViewAdd -l-o View
+ViewUpdate -l-o View
+ViewDelete -l-o View
+View-r-Controller
+Controller -r- Repository
+Repository --Model
+Player --o Tournoi 
+Player --> Match 
+Match --* Tournoi
+@enduml
